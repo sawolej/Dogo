@@ -35,6 +35,10 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+//Seed database
+DogoDBInitialiser.Seed(app);
+//DogoDBInitialiser.SeedUsersAndRolesAsync(app).Wait();
+
 app.Run();
 
 
