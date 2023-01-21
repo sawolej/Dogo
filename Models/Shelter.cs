@@ -6,9 +6,14 @@ namespace Dogo.Models
     {
         [Key]
         public int Id { get; set; }
+
+        [Display(Name="Shelter Logo")]
         public string ImageURL { get; set; }
+        [Display(Name = "Shelter Name")]
         public string Name { get; set; }
+        [Display(Name = "Shelter Location")]
         public string Location { get; set; }
+        [Display(Name = "Shelter Description")]
         public string Decsription { get; set; }
 
         //Relationship

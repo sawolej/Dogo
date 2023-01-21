@@ -1,5 +1,7 @@
 ﻿using Dogo.DB;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace Dogo.Controllers
 {
@@ -11,10 +13,10 @@ namespace Dogo.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var data = _context.Dog.ToList();
-            return View();
+            var allDogs = await _context.Dog.ToListAsync();
+            return View(allDogs);
         }
     }
 }

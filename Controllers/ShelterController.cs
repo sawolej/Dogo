@@ -1,12 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Dogo.DB;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dogo.Controllers
 {
     public class ShelterController : Controller
     {
-        public IActionResult Index()
+        private readonly DogoDBContext _context;
+
+        public ShelterController(DogoDBContext context)
         {
-            return View();
+            _context = context;
         }
+        public async Task<IActionResult> Index()
+        {
+            var allShelters = await _context.Shelter.ToListAsync();
+            return View(allShelters);
+        }
+     
     }
 }
