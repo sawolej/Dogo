@@ -1,4 +1,5 @@
 ﻿using Dogo.DB.BaseRepo;
+using Dogo.DB.ViewModels;
 using Dogo.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +17,16 @@ namespace Dogo.DB.Services
         {
             var dogDetails = await _context.Dog.FirstOrDefaultAsync(n => n.Id == id);
             return dogDetails;
+        }
+
+        public async Task<NewDogDropdownsVM> GetNewDogDropdownsValues()
+        {
+            var response = new NewDogDropdownsVM()
+            {
+                Shelters = await _context.Shelter.OrderBy(n => n.Name).ToListAsync()
+            };
+
+            return response;
         }
 
         /*        public async Task AddNewMovieAsync(NewMovieVM data)
@@ -61,14 +72,7 @@ namespace Dogo.DB.Services
 
                 public async Task<NewMovieDropdownsVM> GetNewMovieDropdownsValues()
                 {
-                    var response = new NewMovieDropdownsVM()
-                    {
-                        Actors = await _context.Actors.OrderBy(n => n.FullName).ToListAsync(),
-                        Cinemas = await _context.Cinemas.OrderBy(n => n.Name).ToListAsync(),
-                        Producers = await _context.Producers.OrderBy(n => n.FullName).ToListAsync()
-                    };
-
-                    return response;
+               
                 }
 
                 public async Task UpdateMovieAsync(NewMovieVM data)
