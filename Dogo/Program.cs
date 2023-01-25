@@ -17,6 +17,7 @@ builder.Services.AddDbContext<DogoDBContext>(options => options.UseSqlServer(bui
 
 //Services configuration
 builder.Services.AddScoped<IShelterService, SheltersService>();
+builder.Services.AddScoped<IDogService, DogService>();
 
 var app = builder.Build();
 

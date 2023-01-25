@@ -143,20 +143,8 @@ namespace Dogo.DB
                 //dog_shelter
                 if (!context.Dog_Shelter.Any())
                 {
-                    context.Dog_Shelter.AddRange(new List<Dog_Shelter>(){
-                        new Dog_Shelter()
-                        {
-                           DogId=1,
-                           ShelterId=1
-
-                        },
-                         new Dog_Shelter()
-                        {
-                           DogId=2,
-                           ShelterId=1
-
-                        },
-                    });
+               
+                    
                     context.SaveChanges();
                 }
             }
