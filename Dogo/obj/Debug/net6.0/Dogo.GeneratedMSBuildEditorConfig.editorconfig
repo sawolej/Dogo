@@ -16,12 +16,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/HP/Desktop/studia/rok3/.net/psiaApka/Dogo/Dogo/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/HP/Desktop/studia/rok3/.net/psiaApka/Dogo/Dogo/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Users/HP/Desktop/studia/rok3/.net/psiaApka/Dogo/Dogo/Views/Dogs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/HP/Desktop/studia/rok3/.net/psiaApka/Dogo/Dogo/Views/Shared/Error.cshtml]
@@ -30,6 +26,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/HP/Desktop/studia/rok3/.net/psiaApka/Dogo/Dogo/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/studia/rok3/.net/psiaApka/Dogo/Dogo/Views/Shelter/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hlbHRlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/studia/rok3/.net/psiaApka/Dogo/Dogo/Views/Shelter/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hlbHRlclxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/studia/rok3/.net/psiaApka/Dogo/Dogo/Views/Shelter/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hlbHRlclxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/studia/rok3/.net/psiaApka/Dogo/Dogo/Views/Shelter/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hlbHRlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Desktop/studia/rok3/.net/psiaApka/Dogo/Dogo/Views/Shelter/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hlbHRlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/HP/Desktop/studia/rok3/.net/psiaApka/Dogo/Dogo/Views/_ViewImports.cshtml]
