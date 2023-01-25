@@ -2,6 +2,7 @@
 using Dogo.DB.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
@@ -29,6 +30,21 @@ namespace Dogo.Controllers
             var movieDetail = await _service.GetDogByIdAsync(id);
             return View(movieDetail);
         }
+
+        //GET: Movies/Create
+        public async Task<IActionResult> Create()
+        {
+            /* var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
+
+             ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
+             ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
+             ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");*/
+            ViewData["hello"] = "wolcome";
+            ViewBag.Description = "hi";
+
+            return View();
+        }
+
         /*
            [AllowAnonymous]
         public async Task<IActionResult> Filter(string searchString)
