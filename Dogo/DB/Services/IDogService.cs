@@ -9,7 +9,7 @@ namespace Dogo.DB.Services
     {
         Task<Dog> GetDogByIdAsync(int id);
 
-        /*  Task AddNewMovieAsync(NewMovieVM data);
-         Task UpdateMovieAsync(NewMovieVM data);*/
+        Task AddNewDogAsync(NewDogVM data);
+         /*Task UpdateMovieAsync(NewMovieVM data);*/
     }
 }

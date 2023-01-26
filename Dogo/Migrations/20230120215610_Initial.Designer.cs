@@ -55,8 +55,8 @@ namespace Dogo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ShelterId")
-                        .HasColumnType("int");
+                    /*b.Property<int?>("ShelterId")
+                        .HasColumnType("int");*/
 
                     b.HasKey("Id");
 

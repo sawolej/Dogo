@@ -23,9 +23,9 @@ namespace Dogo.Models
         [Required(ErrorMessage = "Age is required")]
         public int Age { get; set; }
 
-        [Display(Name = "ShelterId")]
+ /*       [Display(Name = "ShelterId")]
         [Required(ErrorMessage = "ShelterId is required")]
-        public int ShelterId { get; set; }
+        public int ShelterId { get; set; }*/
 
         [Display(Name = "Description")]
         [Required(ErrorMessage = "Description is required")]

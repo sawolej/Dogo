@@ -17,86 +17,72 @@ namespace Dogo.DB.Services
             var dogDetails = await _context.Dog.FirstOrDefaultAsync(n => n.Id == id);
             return dogDetails;
         }
+        public async Task AddNewDogAsync(NewDogVM data)
+        {
+            var newDog = new Dog()
+            {
+                Name = data.Name,
+                Description = data.Description,
+                Age = data.Age,
+                ImageURL = data.ImageURL,
+                Shelter = data.Shelter,
+                DataFrom = data.DataFrom               
+            };
+            await _context.Dog.AddAsync(newDog);
+            await _context.SaveChangesAsync();
+            
+        }
 
+        /*        
 
-        /*        public async Task AddNewMovieAsync(NewMovieVM data)
+                public async Task<Dog> GetDogByIdAsync(int id)
                 {
-                    var newMovie = new Movie()
-                    {
-                        Name = data.Name,
-                        Description = data.Description,
-                        Price = data.Price,
-                        ImageURL = data.ImageURL,
-                        CinemaId = data.CinemaId,
-                        StartDate = data.StartDate,
-                        EndDate = data.EndDate,
-                        MovieCategory = data.MovieCategory,
-                        ProducerId = data.ProducerId
-                    };
-                    await _context.Movies.AddAsync(newMovie);
-                    await _context.SaveChangesAsync();
-
-                    //Add Movie Actors
-                    foreach (var actorId in data.ActorIds)
-                    {
-                        var newActorMovie = new Actor_Movie()
-                        {
-                            MovieId = newMovie.Id,
-                            ActorId = actorId
-                        };
-                        await _context.Actors_Movies.AddAsync(newActorMovie);
-                    }
-                    await _context.SaveChangesAsync();
-                }
-
-                public async Task<Movie> GetMovieByIdAsync(int id)
-                {
-                    var movieDetails = await _context.Movies
+                    var DogDetails = await _context.Dogs
                         .Include(c => c.Cinema)
                         .Include(p => p.Producer)
-                        .Include(am => am.Actors_Movies).ThenInclude(a => a.Actor)
+                        .Include(am => am.Actors_Dogs).ThenInclude(a => a.Actor)
                         .FirstOrDefaultAsync(n => n.Id == id);
 
-                    return movieDetails;
+                    return DogDetails;
                 }
 
-                public async Task<NewMovieDropdownsVM> GetNewMovieDropdownsValues()
+                public async Task<NewDogDropdownsVM> GetNewDogDropdownsValues()
                 {
                
                 }
 
-                public async Task UpdateMovieAsync(NewMovieVM data)
+                public async Task UpdateDogAsync(NewDogVM data)
                 {
-                    var dbMovie = await _context.Movies.FirstOrDefaultAsync(n => n.Id == data.Id);
+                    var dbDog = await _context.Dogs.FirstOrDefaultAsync(n => n.Id == data.Id);
 
-                    if (dbMovie != null)
+                    if (dbDog != null)
                     {
-                        dbMovie.Name = data.Name;
-                        dbMovie.Description = data.Description;
-                        dbMovie.Price = data.Price;
-                        dbMovie.ImageURL = data.ImageURL;
-                        dbMovie.CinemaId = data.CinemaId;
-                        dbMovie.StartDate = data.StartDate;
-                        dbMovie.EndDate = data.EndDate;
-                        dbMovie.MovieCategory = data.MovieCategory;
-                        dbMovie.ProducerId = data.ProducerId;
+                        dbDog.Name = data.Name;
+                        dbDog.Description = data.Description;
+                        dbDog.Price = data.Price;
+                        dbDog.ImageURL = data.ImageURL;
+                        dbDog.CinemaId = data.CinemaId;
+                        dbDog.StartDate = data.StartDate;
+                        dbDog.EndDate = data.EndDate;
+                        dbDog.DogCategory = data.DogCategory;
+                        dbDog.ProducerId = data.ProducerId;
                         await _context.SaveChangesAsync();
                     }
 
                     //Remove existing actors
-                    var existingActorsDb = _context.Actors_Movies.Where(n => n.MovieId == data.Id).ToList();
-                    _context.Actors_Movies.RemoveRange(existingActorsDb);
+                    var existingActorsDb = _context.Actors_Dogs.Where(n => n.DogId == data.Id).ToList();
+                    _context.Actors_Dogs.RemoveRange(existingActorsDb);
                     await _context.SaveChangesAsync();
 
-                    //Add Movie Actors
+                    //Add Dog Actors
                     foreach (var actorId in data.ActorIds)
                     {
-                        var newActorMovie = new Actor_Movie()
+                        var newActorDog = new Actor_Dog()
                         {
-                            MovieId = data.Id,
+                            DogId = data.Id,
                             ActorId = actorId
                         };
-                        await _context.Actors_Movies.AddAsync(newActorMovie);
+                        await _context.Actors_Dogs.AddAsync(newActorDog);
                     }
                     await _context.SaveChangesAsync();
                 }*/

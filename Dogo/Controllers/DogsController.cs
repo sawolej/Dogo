@@ -1,5 +1,6 @@
 ﻿using Dogo.DB;
 using Dogo.DB.Services;
+using Dogo.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -43,6 +44,18 @@ namespace Dogo.Controllers
             return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Create(NewDogVM dog)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(dog);
+            }
+
+            await _service.AddNewDogAsync(dog);
+            return RedirectToAction(nameof(Index));
+        }
+
         /*
            [AllowAnonymous]
         public async Task<IActionResult> Filter(string searchString)
@@ -75,23 +88,7 @@ namespace Dogo.Controllers
             return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Create(NewMovieVM movie)
-        {
-            if (!ModelState.IsValid)
-            {
-                var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
-
-                ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
-                ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
-                ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");
-
-                return View(movie);
-            }
-
-            await _service.AddNewMovieAsync(movie);
-            return RedirectToAction(nameof(Index));
-        }
+       
 
 
         //GET: Movies/Edit/1
