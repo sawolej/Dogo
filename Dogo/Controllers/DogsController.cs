@@ -34,10 +34,11 @@ namespace Dogo.Controllers
         //GET: Movies/Create
         public async Task<IActionResult> Create()
         {
-             var dogDropdownsData = await _service.GetNewDogDropdownsValues();
 
-             ViewBag.Shelters = new SelectList(dogDropdownsData.Shelters, "Id", "Name");
- 
+            ViewData["Welcome"] = "wof!";
+            ViewBag.Description = "hi there";
+
+
 
             return View();
         }

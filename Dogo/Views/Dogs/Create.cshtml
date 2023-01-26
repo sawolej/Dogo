@@ -40,14 +40,13 @@
                                 <input asp-for="ImageURL" class="form-control" />
                                 <span asp-validation-for="ImageURL" class="text-danger"></span>
                             </div>
-                        </div>
-                        <div class="col-md-6">
                             <div class="form-group">
-                                <label asp-for="ShelterId" class="control-label"></label>
-                                <select asp-for="ShelterId" class="form-control" asp-items="ViewBag.Shelters"></select>
-                                <span asp-validation-for="ShelterId" class="text-danger"></span>
+                                <label asp-for="Shelter" class="control-label"></label>
+                                <input asp-for="Shelter" class="form-control" />
+                                <span asp-validation-for="Shelter" class="text-danger"></span>
                             </div>
                         </div>
+                       
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label asp-for="Description" class="control-label"></label>

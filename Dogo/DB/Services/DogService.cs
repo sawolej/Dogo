@@ -1,5 +1,4 @@
 ﻿using Dogo.DB.BaseRepo;
-using Dogo.DB.ViewModels;
 using Dogo.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,15 +18,6 @@ namespace Dogo.DB.Services
             return dogDetails;
         }
 
-        public async Task<NewDogDropdownsVM> GetNewDogDropdownsValues()
-        {
-            var response = new NewDogDropdownsVM()
-            {
-                Shelters = await _context.Shelter.OrderBy(n => n.Name).ToListAsync()
-            };
-
-            return response;
-        }
 
         /*        public async Task AddNewMovieAsync(NewMovieVM data)
                 {
