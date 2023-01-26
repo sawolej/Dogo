@@ -8,6 +8,7 @@ namespace Dogo.Models
     public class NewDogVM
     {
 
+        public int Id { get; set; }
 
         [Display(Name = "Image")]
         [Required(ErrorMessage = "Image is required")]

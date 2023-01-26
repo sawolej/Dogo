@@ -39,19 +39,19 @@ namespace Dogo.Migrations
                     Age = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DataFrom = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ShelterId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
+                    // ShelterId = table.Column<int>(type: "int", nullable: true)
+                }
+                /*constraints: table =>
                 {
                     table.PrimaryKey("PK_Dog", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Dog_Shelter_ShelterId",
-                        column: x => x.ShelterId,
+                       // column: x => x.ShelterId,
                         principalTable: "Shelter",
                         principalColumn: "Id");
-                });
+                }*/);
 
-            migrationBuilder.CreateTable(
+        /*    migrationBuilder.CreateTable(
                 name: "Dog_Shelter",
                 columns: table => new
                 {
@@ -83,7 +83,7 @@ namespace Dogo.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Dog_Shelter_ShelterId",
                 table: "Dog_Shelter",
-                column: "ShelterId");
+                column: "ShelterId");*/
         }
 
         /// <inheritdoc />

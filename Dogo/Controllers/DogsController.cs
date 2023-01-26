@@ -56,6 +56,44 @@ namespace Dogo.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        //GET: /Edit/1
+        public async Task<IActionResult> Edit(int id)
+        {
+            var dogDetails = await _service.GetDogByIdAsync(id);
+            if (dogDetails == null) return View("NotFound");
+
+            var response = new NewDogVM()
+            {
+                Id = dogDetails.Id,
+                Name = dogDetails.Name,
+                Description = dogDetails.Description,
+                Age = dogDetails.Age,
+                DataFrom = dogDetails.DataFrom,               
+                ImageURL = dogDetails.ImageURL,
+                Shelter = dogDetails.Shelter
+                
+            };
+
+          
+            return View(response);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, NewDogVM dog)
+        {
+            if (id != dog.Id) return View("NotFound");
+
+            if (!ModelState.IsValid)
+            {
+              
+
+                return View(dog);
+            }
+
+            await _service.UpdateDogAsync(dog);
+            return RedirectToAction(nameof(Index));
+        }
+
         /*
            [AllowAnonymous]
         public async Task<IActionResult> Filter(string searchString)
@@ -91,54 +129,7 @@ namespace Dogo.Controllers
        
 
 
-        //GET: Movies/Edit/1
-        public async Task<IActionResult> Edit(int id)
-        {
-            var movieDetails = await _service.GetMovieByIdAsync(id);
-            if (movieDetails == null) return View("NotFound");
-
-            var response = new NewMovieVM()
-            {
-                Id = movieDetails.Id,
-                Name = movieDetails.Name,
-                Description = movieDetails.Description,
-                Price = movieDetails.Price,
-                StartDate = movieDetails.StartDate,
-                EndDate = movieDetails.EndDate,
-                ImageURL = movieDetails.ImageURL,
-                MovieCategory = movieDetails.MovieCategory,
-                CinemaId = movieDetails.CinemaId,
-                ProducerId = movieDetails.ProducerId,
-                ActorIds = movieDetails.Actors_Movies.Select(n => n.ActorId).ToList(),
-            };
-
-            var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
-            ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
-            ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
-            ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");
-
-            return View(response);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Edit(int id, NewMovieVM movie)
-        {
-            if (id != movie.Id) return View("NotFound");
-
-            if (!ModelState.IsValid)
-            {
-                var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
-
-                ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
-                ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
-                ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");
-
-                return View(movie);
-            }
-
-            await _service.UpdateMovieAsync(movie);
-            return RedirectToAction(nameof(Index));
-        }
+        
          */
     }
 }

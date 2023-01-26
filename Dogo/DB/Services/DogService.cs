@@ -33,6 +33,25 @@ namespace Dogo.DB.Services
             
         }
 
+        public async Task UpdateDogAsync(NewDogVM data)
+        {
+            var dbDog = await _context.Dog.FirstOrDefaultAsync(n => n.Id == data.Id);
+
+            if (dbDog != null)
+            {
+                dbDog.Name = data.Name;
+                dbDog.Description = data.Description;
+                dbDog.Age = data.Age;
+                dbDog.ImageURL = data.ImageURL;
+                dbDog.Shelter = data.Shelter;
+                dbDog.DataFrom = data.DataFrom;
+              
+                await _context.SaveChangesAsync();
+            }
+
+           
+        }
+
         /*        
 
                 public async Task<Dog> GetDogByIdAsync(int id)
@@ -51,40 +70,6 @@ namespace Dogo.DB.Services
                
                 }
 
-                public async Task UpdateDogAsync(NewDogVM data)
-                {
-                    var dbDog = await _context.Dogs.FirstOrDefaultAsync(n => n.Id == data.Id);
-
-                    if (dbDog != null)
-                    {
-                        dbDog.Name = data.Name;
-                        dbDog.Description = data.Description;
-                        dbDog.Price = data.Price;
-                        dbDog.ImageURL = data.ImageURL;
-                        dbDog.CinemaId = data.CinemaId;
-                        dbDog.StartDate = data.StartDate;
-                        dbDog.EndDate = data.EndDate;
-                        dbDog.DogCategory = data.DogCategory;
-                        dbDog.ProducerId = data.ProducerId;
-                        await _context.SaveChangesAsync();
-                    }
-
-                    //Remove existing actors
-                    var existingActorsDb = _context.Actors_Dogs.Where(n => n.DogId == data.Id).ToList();
-                    _context.Actors_Dogs.RemoveRange(existingActorsDb);
-                    await _context.SaveChangesAsync();
-
-                    //Add Dog Actors
-                    foreach (var actorId in data.ActorIds)
-                    {
-                        var newActorDog = new Actor_Dog()
-                        {
-                            DogId = data.Id,
-                            ActorId = actorId
-                        };
-                        await _context.Actors_Dogs.AddAsync(newActorDog);
-                    }
-                    await _context.SaveChangesAsync();
-                }*/
+               */
     }
 }
