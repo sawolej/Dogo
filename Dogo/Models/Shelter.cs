@@ -23,6 +23,5 @@ namespace Dogo.Models
 
         //Relationship
 
-        public List<Dog> Dogs { get; set; }
     }
 }

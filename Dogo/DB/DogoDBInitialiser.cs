@@ -140,13 +140,7 @@ namespace Dogo.DB
                     context.SaveChanges();
                 }
 
-                //dog_shelter
-                if (!context.Dog_Shelter.Any())
-                {
-               
-                    
-                    context.SaveChanges();
-                }
+         
             }
         }
     }

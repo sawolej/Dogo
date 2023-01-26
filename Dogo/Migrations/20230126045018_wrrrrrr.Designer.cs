@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Dogo.Migrations
 {
     [DbContext(typeof(DogoDBContext))]
-    [Migration("20230120215610_Initial")]
-    partial class Initial
+    [Migration("20230126045018_wrrrrrr")]
+    partial class wrrrrrr
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,29 +55,9 @@ namespace Dogo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    /*b.Property<int?>("ShelterId")
-                        .HasColumnType("int");*/
-
                     b.HasKey("Id");
 
-                    b.HasIndex("ShelterId");
-
                     b.ToTable("Dog");
-                });
-
-            modelBuilder.Entity("Dogo.Models.Dog_Shelter", b =>
-                {
-                    b.Property<int>("DogId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ShelterId")
-                        .HasColumnType("int");
-
-                    b.HasKey("DogId", "ShelterId");
-
-                    b.HasIndex("ShelterId");
-
-                    b.ToTable("Dog_Shelter");
                 });
 
             modelBuilder.Entity("Dogo.Models.Shelter", b =>
@@ -107,37 +87,6 @@ namespace Dogo.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Shelter");
-                });
-
-            modelBuilder.Entity("Dogo.Models.Dog", b =>
-                {
-                    b.HasOne("Dogo.Models.Shelter", null)
-                        .WithMany("Dogs")
-                        .HasForeignKey("ShelterId");
-                });
-
-            modelBuilder.Entity("Dogo.Models.Dog_Shelter", b =>
-                {
-                    b.HasOne("Dogo.Models.Dog", "Dog")
-                        .WithMany()
-                        .HasForeignKey("DogId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Dogo.Models.Shelter", "Shelter")
-                        .WithMany()
-                        .HasForeignKey("ShelterId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Dog");
-
-                    b.Navigation("Shelter");
-                });
-
-            modelBuilder.Entity("Dogo.Models.Shelter", b =>
-                {
-                    b.Navigation("Dogs");
                 });
 #pragma warning restore 612, 618
         }
