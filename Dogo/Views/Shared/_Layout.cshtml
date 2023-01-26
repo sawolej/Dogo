@@ -26,25 +26,29 @@
                         <li class="navbar-nav ">
                             <a class="nav-link text-dark" asp-controller="Shelter" asp-action="Index"><i class="badge-info bi-house-heart"></i>Shelters</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="button" aria-haspopup="true" aria-expanded="false"> 
+                        
+                    </ul>
+                </div>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav ">
+                        <form class="d-flex" asp-controller="Dogs" asp-action="Filter" style="padding-right:25px;">
+                            <input name="searchString" type="search" class="form-control" placeholder="Search for a friend..." />
+                            <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+                        </form>
+                        <li class="nav-item flex-grow-1 dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-gear"></i> Management
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown_item" asp-controller="Shelter" asp-action="Index"> <i class="bi bi-cos">Shelters</i></a>
-                            </div>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" asp-controller="Shelter" asp-action="Index"> <i class="bi bi-cos">Shelters</i></a></li>
+                            </ul>
                         </li>
                     </ul>
-
-                    <form class="form-inline my-2 my-lg-0" asp-controller="Dogs" asp-action="Filter" style="padding-right:25px;">
-                        <input name="searchString" type="text" class="form-control" placeholder="Search for a friend..." />
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
-                    </form>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container-fluid>
+    <div class="container-fluid"">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

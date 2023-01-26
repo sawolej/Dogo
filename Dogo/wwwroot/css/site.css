@@ -16,3 +16,11 @@ html {
 body {
   margin-bottom: 60px;
 }
+/* all link icons */
+.nav-link i {
+    padding-right: .3rem
+}
+    /* management icon */
+    .nav-link i.bi-gear {
+        padding-right: 0
+    }
