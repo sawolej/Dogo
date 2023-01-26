@@ -93,6 +93,21 @@ namespace Dogo.Controllers
             await _service.UpdateDogAsync(dog);
             return RedirectToAction(nameof(Index));
         }
+        public async Task<IActionResult> Filter(string searchString)
+        {
+            var allDogs = await _service.GetAllAsync();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                //var filteredResult = allMovies.Where(n => n.Name.ToLower().Contains(searchString.ToLower()) || n.Description.ToLower().Contains(searchString.ToLower())).ToList();
+
+                var filteredResultNew = allDogs.Where(n => string.Equals(n.Name, searchString, StringComparison.CurrentCultureIgnoreCase) || string.Equals(n.Description, searchString, StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+                return View("Index", filteredResultNew);
+            }
+
+            return View("Index", allDogs);
+        }
 
         /*
            [AllowAnonymous]
