@@ -7,6 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\**" />
+    <Content Remove="Views\**" />
+    <EmbeddedResource Remove="Views\**" />
+    <None Remove="Views\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="DB\BaseRepo\EntityBaseRepo.cs" />
+    <Compile Remove="DB\BaseRepo\IEntityBase.cs" />
+    <Compile Remove="DB\BaseRepo\IEntityBaseRepo.cs" />
+    <Compile Remove="DB\Services\DogService.cs" />
+    <Compile Remove="DB\Services\IDogService.cs" />
+    <Compile Remove="DB\Services\IShelterService.cs" />
+    <Compile Remove="DB\Services\SheltersService.cs" />
+    <Compile Remove="DB\ViewModels\NewDogVM.cs" />
+    <Compile Remove="Models\Dog_Shelter.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.2">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -20,6 +39,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="DB\BaseRepo\" />
+    <Folder Include="DB\Services\" />
+    <Folder Include="DB\ViewModels\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
 

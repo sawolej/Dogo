@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mg5IJpkcxKLMMvMMAaWYKqL7OLzC375DBhNB1GRiMsU=",
+  "Hash": "9XvjguolPYXpK/rSO4OyRc1oOyfF3EV9vqbVmkWxyGo=",
   "Source": "Dogo",
   "BasePath": "_content/Dogo",
   "Mode": "Default",
@@ -16,40 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\HP\\Desktop\\studia\\rok3\\.net\\psiaApka\\Dogo\\Dogo\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Dogo.styles.css",
-      "SourceId": "Dogo",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\HP\\Desktop\\studia\\rok3\\.net\\psiaApka\\Dogo\\Dogo\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/Dogo",
-      "RelativePath": "Dogo.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\HP\\Desktop\\studia\\rok3\\.net\\psiaApka\\Dogo\\Dogo\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Dogo.styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\HP\\Desktop\\studia\\rok3\\.net\\psiaApka\\Dogo\\Dogo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Dogo.bundle.scp.css",
-      "SourceId": "Dogo",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\HP\\Desktop\\studia\\rok3\\.net\\psiaApka\\Dogo\\Dogo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/Dogo",
-      "RelativePath": "Dogo.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\HP\\Desktop\\studia\\rok3\\.net\\psiaApka\\Dogo\\Dogo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Dogo.bundle.scp.css"
-    },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\studia\\rok3\\.net\\psiaApka\\Dogo\\Dogo\\wwwroot\\css\\site.css",
       "SourceId": "Dogo",

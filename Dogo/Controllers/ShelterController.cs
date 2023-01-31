@@ -1,11 +1,13 @@
-﻿using Dogo.DB;
+﻿/*using Dogo.DB;
 using Dogo.DB.Services;
 using Dogo.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Dogo.Controllers
 {
+
     public class ShelterController : Controller
     {
         private readonly IShelterService _service;
@@ -20,7 +22,6 @@ namespace Dogo.Controllers
             return View(allShelters);
         }
 
-        //get: shelter/create
         public IActionResult Create()
         {
             return View();
@@ -32,6 +33,8 @@ namespace Dogo.Controllers
             await _service.AddAsync(shelter);
             return RedirectToAction(nameof(Index));
         }
+
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var shelterDetails = await _service.GetByIdAsync(id);
@@ -39,7 +42,6 @@ namespace Dogo.Controllers
             return View(shelterDetails);
         }
 
-        //Get: Cinemas/Edit/1
         public async Task<IActionResult> Edit(int id)
         {
             var shelterDetails = await _service.GetByIdAsync(id);
@@ -55,7 +57,6 @@ namespace Dogo.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //Get: Cinemas/Delete/1
         public async Task<IActionResult> Delete(int id)
         {
             var shelterDetails = await _service.GetByIdAsync(id);
@@ -77,3 +78,4 @@ namespace Dogo.Controllers
 
     }
 }
+*/

@@ -52,24 +52,6 @@ namespace Dogo.DB.Services
            
         }
 
-        /*        
 
-                public async Task<Dog> GetDogByIdAsync(int id)
-                {
-                    var DogDetails = await _context.Dogs
-                        .Include(c => c.Cinema)
-                        .Include(p => p.Producer)
-                        .Include(am => am.Actors_Dogs).ThenInclude(a => a.Actor)
-                        .FirstOrDefaultAsync(n => n.Id == id);
-
-                    return DogDetails;
-                }
-
-                public async Task<NewDogDropdownsVM> GetNewDogDropdownsValues()
-                {
-               
-                }
-
-               */
     }
 }

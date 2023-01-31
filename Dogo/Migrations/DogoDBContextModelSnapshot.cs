@@ -40,6 +40,9 @@ namespace Dogo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("DogBreed")
+                        .HasColumnType("int");
+
                     b.Property<string>("ImageURL")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -48,13 +51,27 @@ namespace Dogo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Shelter")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ShelterId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Dog");
+                    b.HasIndex("ShelterId");
+
+                    b.ToTable("Dogs");
+                });
+
+            modelBuilder.Entity("Dogo.Models.Dog_Shelter", b =>
+                {
+                    b.Property<int>("DogId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ShelterId")
+                        .HasColumnType("int");
+
+                    b.HasKey("DogId", "ShelterId");
+
+                    b.ToTable("Dog_Shelters");
                 });
 
             modelBuilder.Entity("Dogo.Models.Shelter", b =>
@@ -83,7 +100,23 @@ namespace Dogo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Shelter");
+                    b.ToTable("Shelters");
+                });
+
+            modelBuilder.Entity("Dogo.Models.Dog", b =>
+                {
+                    b.HasOne("Dogo.Models.Shelter", "Shelter")
+                        .WithMany("Dogs")
+                        .HasForeignKey("ShelterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Shelter");
+                });
+
+            modelBuilder.Entity("Dogo.Models.Shelter", b =>
+                {
+                    b.Navigation("Dogs");
                 });
 #pragma warning restore 612, 618
         }

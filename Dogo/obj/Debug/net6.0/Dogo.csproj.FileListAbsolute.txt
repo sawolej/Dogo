@@ -12,8 +12,6 @@ C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\Dogo.As
 C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\Dogo.AssemblyInfo.cs
 C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\Dogo.csproj.CoreCompileInputs.cache
 C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\Dogo.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\Dogo.RazorAssemblyInfo.cache
-C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\Dogo.RazorAssemblyInfo.cs
 C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\staticwebassets\msbuild.Dogo.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\staticwebassets\msbuild.build.Dogo.props
 C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Dogo.props
@@ -21,9 +19,7 @@ C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\staticw
 C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\staticwebassets.pack.json
 C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\staticwebassets.development.json
-C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\scopedcss\bundle\Dogo.styles.css
-C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\scopedcss\projectbundle\Dogo.bundle.scp.css
 C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\Dogo.dll
 C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\refint\Dogo.dll
 C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\Dogo.pdb
