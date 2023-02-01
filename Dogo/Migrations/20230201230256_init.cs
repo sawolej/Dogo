@@ -6,23 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Dogo.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "Dog_Shelters",
-                columns: table => new
-                {
-                    ShelterId = table.Column<int>(type: "int", nullable: false),
-                    DogId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Dog_Shelters", x => new { x.DogId, x.ShelterId });
-                });
-
             migrationBuilder.CreateTable(
                 name: "Shelters",
                 columns: table => new
@@ -73,9 +61,6 @@ namespace Dogo.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Dog_Shelters");
-
             migrationBuilder.DropTable(
                 name: "Dogs");
 

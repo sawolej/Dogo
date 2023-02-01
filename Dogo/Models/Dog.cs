@@ -16,8 +16,8 @@ namespace Dogo.Models
         public string Description { get; set; }
         public DateTime DataFrom { get; set; }
 
-        public DogBreed DogBreed { get; set; } 
-
+        public DogBreed DogBreed { get; set; }
+        [Display(Name = "Shelter")]
         public int ShelterId { get; set; }
         [ForeignKey ("ShelterId")]
         public Shelter Shelter { get; set; }

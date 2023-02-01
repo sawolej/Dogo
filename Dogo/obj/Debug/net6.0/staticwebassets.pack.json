@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\HP\\Desktop\\studia\\rok3\\.net\\psiaApka\\Dogo\\Dogo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Dogo.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Dogo.bundle.scp.css"
+    },
+    {
       "Id": "C:\\Users\\HP\\Desktop\\studia\\rok3\\.net\\psiaApka\\Dogo\\Dogo\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

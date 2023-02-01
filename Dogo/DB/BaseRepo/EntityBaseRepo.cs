@@ -5,7 +5,7 @@ namespace Dogo.DB.BaseRepo
 {
     public class EntityBaseRepo<T> : IEntityBaseRepo<T> where T : class, IEntityBase, new()
     {
-        private readonly DogoDBContext _context;
+        /*private readonly DogoDBContext _context;
         public EntityBaseRepo(DogoDBContext context)
         {
             _context = context;
@@ -42,6 +42,30 @@ namespace Dogo.DB.BaseRepo
             entityentry.State = EntityState.Modified;
             await _context.SaveChangesAsync();
 
+        }*/
+        public Task AddAsync(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<T>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T> GetByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task UpdateAsync(int id, T entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,22 +7,30 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Views\**" />
-    <Content Remove="Views\**" />
-    <EmbeddedResource Remove="Views\**" />
-    <None Remove="Views\**" />
+    <Compile Remove="Viewo\Dogs\**" />
+    <Compile Remove="Viewo\Shelter\**" />
+    <Content Remove="Viewo\Dogs\**" />
+    <Content Remove="Viewo\Shelter\**" />
+    <EmbeddedResource Remove="Viewo\Dogs\**" />
+    <EmbeddedResource Remove="Viewo\Shelter\**" />
+    <None Remove="Viewo\Dogs\**" />
+    <None Remove="Viewo\Shelter\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="DB\BaseRepo\EntityBaseRepo.cs" />
-    <Compile Remove="DB\BaseRepo\IEntityBase.cs" />
-    <Compile Remove="DB\BaseRepo\IEntityBaseRepo.cs" />
     <Compile Remove="DB\Services\DogService.cs" />
     <Compile Remove="DB\Services\IDogService.cs" />
     <Compile Remove="DB\Services\IShelterService.cs" />
     <Compile Remove="DB\Services\SheltersService.cs" />
     <Compile Remove="DB\ViewModels\NewDogVM.cs" />
     <Compile Remove="Models\Dog_Shelter.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Viewo\Create.cshtml" />
+    <Content Remove="Viewo\Details.cshtml" />
+    <Content Remove="Viewo\Edit.cshtml" />
+    <Content Remove="Viewo\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,7 +47,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DB\BaseRepo\" />
+    <Folder Include="DB\Services\" />
+    <Folder Include="DB\ViewModels\" />
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+	
+	  <ItemGroup>
     <Folder Include="DB\Services\" />
     <Folder Include="DB\ViewModels\" />
     <Folder Include="Migrations\" />

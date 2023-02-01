@@ -1,5 +1,5 @@
-﻿/*using Dogo.DB;
-using Dogo.DB.Services;
+﻿using Dogo.DB;
+//using Dogo.DB.Services;
 using Dogo.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +10,21 @@ namespace Dogo.Controllers
 
     public class ShelterController : Controller
     {
+
+        private readonly DogoDBContext _context;
+
+        public ShelterController(DogoDBContext context)
+        {
+            _context = context;
+        }
+        public async Task<IActionResult> Index()
+        {
+            var allShelters = await _context.Shelters.ToListAsync();
+            return View(allShelters);
+        }
+
+
+        /*
         private readonly IShelterService _service;
 
         public ShelterController(IShelterService service)
@@ -27,9 +42,9 @@ namespace Dogo.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("logo, Name, Description")]Shelter shelter)
+        public async Task<IActionResult> Create([Bind("logo, Name, Description")] Shelter shelter)
         {
-            if(!ModelState.IsValid) { return View(shelter); }
+            if (!ModelState.IsValid) { return View(shelter); }
             await _service.AddAsync(shelter);
             return RedirectToAction(nameof(Index));
         }
@@ -74,8 +89,7 @@ namespace Dogo.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
+*/
 
     }
 }
-*/

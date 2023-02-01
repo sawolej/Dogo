@@ -1,12 +1,13 @@
 using Dogo.DB;
-using Microsoft.EntityFrameworkCore.SqlServer;
+using Dogo.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
-using System;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 //using Dogo.DB.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,12 +21,14 @@ builder.Services.AddDbContext<DogoDBContext>(options => options.UseSqlServer(bui
 //builder.Services.AddScoped<IDogService, DogService>();
 
 //Authentication and authorization
+/*
+ * builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 builder.Services.AddMemoryCache();
 builder.Services.AddSession();
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-});
+});*/
 
 builder.Services.AddControllersWithViews();
 
@@ -51,7 +54,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Dogs}/{action=Index}/{id?}");
 
 //Seed database
 DogoDBInitialiser.Seed(app);

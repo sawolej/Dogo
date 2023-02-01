@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Dogo.Migrations
 {
     [DbContext(typeof(DogoDBContext))]
-    [Migration("20230130220853_Initial")]
-    partial class Initial
+    [Migration("20230201230256_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,19 +62,6 @@ namespace Dogo.Migrations
                     b.HasIndex("ShelterId");
 
                     b.ToTable("Dogs");
-                });
-
-            modelBuilder.Entity("Dogo.Models.Dog_Shelter", b =>
-                {
-                    b.Property<int>("DogId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ShelterId")
-                        .HasColumnType("int");
-
-                    b.HasKey("DogId", "ShelterId");
-
-                    b.ToTable("Dog_Shelters");
                 });
 
             modelBuilder.Entity("Dogo.Models.Shelter", b =>

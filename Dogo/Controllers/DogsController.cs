@@ -16,11 +16,10 @@ namespace Dogo.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var data =
-                _context.Dogs.ToList();
-            return View();
+            var allDogs = await _context.Dogs.Include(n=>n.Shelter).ToListAsync();
+            return View(allDogs);
         }
         /*  
           private readonly IDogService _service;

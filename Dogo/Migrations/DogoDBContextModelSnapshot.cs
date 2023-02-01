@@ -61,19 +61,6 @@ namespace Dogo.Migrations
                     b.ToTable("Dogs");
                 });
 
-            modelBuilder.Entity("Dogo.Models.Dog_Shelter", b =>
-                {
-                    b.Property<int>("DogId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ShelterId")
-                        .HasColumnType("int");
-
-                    b.HasKey("DogId", "ShelterId");
-
-                    b.ToTable("Dog_Shelters");
-                });
-
             modelBuilder.Entity("Dogo.Models.Shelter", b =>
                 {
                     b.Property<int>("Id")
