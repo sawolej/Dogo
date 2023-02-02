@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-//using Dogo.DB.Services;
+using Dogo.DB.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,8 +17,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DogoDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 
 //Services configuration
-//builder.Services.AddScoped<IShelterService, SheltersService>();
-//builder.Services.AddScoped<IDogService, DogService>();
+builder.Services.AddScoped<IShelterService, SheltersService>();
+builder.Services.AddScoped<IDogService, DogService>();
+
 
 //Authentication and authorization
 /*
@@ -30,7 +31,7 @@ builder.Services.AddAuthentication(options =>
     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
 });*/
 
-builder.Services.AddControllersWithViews();
+
 
 var app = builder.Build();
 

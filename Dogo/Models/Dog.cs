@@ -1,4 +1,4 @@
-﻿//using Dogo.DB.BaseRepo;
+﻿using Dogo.DB.BaseRepo;
 using Dogo.DB.enums;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dogo.Models
 {
-    public class Dog//: IEntityBase
+    public class Dog: IEntityBase
     {
         [Key]
         public int Id { get; set; }

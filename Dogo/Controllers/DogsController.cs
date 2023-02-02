@@ -1,4 +1,5 @@
 ﻿using Dogo.DB;
+using Dogo.DB.Services;
 //using Dogo.DB.Services;
 using Dogo.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -11,28 +12,19 @@ namespace Dogo.Controllers
 {
     public class DogsController : Controller
     {
-        private readonly DogoDBContext _context;
-        public DogsController(DogoDBContext context)
+        private readonly IDogService _service;
+
+        public DogsController(IDogService service)
         {
-            _context = context;
+            _service = service;
         }
         public async Task<IActionResult> Index()
         {
-            var allDogs = await _context.Dogs.Include(n=>n.Shelter).ToListAsync();
+            var allDogs = await _service.GetAllAsync(n=>n.Shelter);
             return View(allDogs);
         }
         /*  
-          private readonly IDogService _service;
-
-          public DogsController(IDogService service)
-          {
-              _service = service;
-          }
-          public async Task<IActionResult> Index()
-          {
-              var allDogs = await _service.GetAllAsync();
-              return View(allDogs);
-          }
+          
 
           //GET: /Details/1
           //[AllowAnonymous]

@@ -1,9 +1,10 @@
-﻿//using Dogo.DB.BaseRepo;
+﻿
+using Dogo.DB.BaseRepo;
 using System.ComponentModel.DataAnnotations;
 
 namespace Dogo.Models
 {
-    public class Shelter//:IEntityBase
+    public class Shelter:IEntityBase
     {
         [Key]
         public int Id { get; set; }

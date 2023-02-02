@@ -1,4 +1,5 @@
 ﻿using Dogo.DB;
+using Dogo.DB.Services;
 //using Dogo.DB.Services;
 using Dogo.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -11,20 +12,6 @@ namespace Dogo.Controllers
     public class ShelterController : Controller
     {
 
-        private readonly DogoDBContext _context;
-
-        public ShelterController(DogoDBContext context)
-        {
-            _context = context;
-        }
-        public async Task<IActionResult> Index()
-        {
-            var allShelters = await _context.Shelters.ToListAsync();
-            return View(allShelters);
-        }
-
-
-        /*
         private readonly IShelterService _service;
 
         public ShelterController(IShelterService service)
@@ -36,20 +23,19 @@ namespace Dogo.Controllers
             var allShelters = await _service.GetAllAsync();
             return View(allShelters);
         }
-
         public IActionResult Create()
         {
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("logo, Name, Description")] Shelter shelter)
+        public async Task<IActionResult> Create([Bind("ImageURL, Name,Location, Decsription")] Shelter shelter)
         {
-            if (!ModelState.IsValid) { return View(shelter); }
+            System.Diagnostics.Debug.WriteLine("Create workin for some reason");
+           // if (!ModelState.IsValid) { return View(shelter); }
             await _service.AddAsync(shelter);
             return RedirectToAction(nameof(Index));
         }
 
-        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var shelterDetails = await _service.GetByIdAsync(id);
@@ -67,7 +53,7 @@ namespace Dogo.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(int id, [Bind("Id,ImageURL,Name, Location,Decsription")] Shelter shelter)
         {
-            if (!ModelState.IsValid) return View(shelter);
+          //  if (!ModelState.IsValid) return View(shelter);
             await _service.UpdateAsync(id, shelter);
             return RedirectToAction(nameof(Index));
         }
@@ -88,6 +74,16 @@ namespace Dogo.Controllers
             await _service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
+
+        /*
+        
+
+        
+
+        [AllowAnonymous]
+    
+
+       
 
 */
 

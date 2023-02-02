@@ -12,7 +12,7 @@ namespace Dogo.DB.Services
             _context = context;
         }
 
-        public async Task<Dog> GetDogByIdAsync(int id)
+/*        public async Task<Dog> GetDogByIdAsync(int id)
         {
             var dogDetails = await _context.Dog.FirstOrDefaultAsync(n => n.Id == id);
             return dogDetails;
@@ -50,7 +50,7 @@ namespace Dogo.DB.Services
             }
 
            
-        }
+        }*/
 
 
     }

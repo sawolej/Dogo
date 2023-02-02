@@ -7,9 +7,9 @@ namespace Dogo.DB.Services
 {
     public interface IDogService:IEntityBaseRepo<Dog>
     {
-        Task<Dog> GetDogByIdAsync(int id);
+/*        Task<Dog> GetDogByIdAsync(int id);
 
         Task AddNewDogAsync(NewDogVM data);
-        Task UpdateDogAsync(NewDogVM data);
+        Task UpdateDogAsync(NewDogVM data);*/
     }
 }

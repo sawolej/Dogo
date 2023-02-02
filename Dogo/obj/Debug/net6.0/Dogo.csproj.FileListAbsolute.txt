@@ -85,3 +85,11 @@ C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\Dogo.Ra
 C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\Dogo.RazorAssemblyInfo.cs
 C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\scopedcss\projectbundle\Dogo.bundle.scp.css
 C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
+C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\bin\Debug\net6.0\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\HP\Desktop\studia\rok3\.net\psiaApka\Dogo\Dogo\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
